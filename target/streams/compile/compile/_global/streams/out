@@ -1,0 +1,10 @@
+[0m[[0m[31merror[0m] [0m[0mC:\Users\admin\Desktop\Cours M2\Scala\Scala_Project\src\main\scala\fileReader\Database.scala:3:1: expected class or object definition[0m
+[0m[[0m[31merror[0m] [0m[0mval db = Database.forConfig("h2mem")[0m
+[0m[[0m[31merror[0m] [0m[0m^[0m
+[0m[[0m[31merror[0m] [0m[0mC:\Users\admin\Desktop\Cours M2\Scala\Scala_Project\src\main\scala\fileReader\Database.scala:5:1: expected class or object definition[0m
+[0m[[0m[31merror[0m] [0m[0mh2mem { [0m
+[0m[[0m[31merror[0m] [0m[0m^[0m
+[0m[[0m[31merror[0m] [0m[0mC:\Users\admin\Desktop\Cours M2\Scala\Scala_Project\src\main\scala\fileReader\Database.scala:15:9: identifier expected but 'type' found.[0m
+[0m[[0m[31merror[0m] [0m[0m    def type = column[String]("TYPE")[0m
+[0m[[0m[31merror[0m] [0m[0m        ^[0m
+[0m[[0m[31merror[0m] [0m[0mthree errors found[0m
