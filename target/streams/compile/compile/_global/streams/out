@@ -1,10 +1,10 @@
-[0m[[0m[31merror[0m] [0m[0mC:\Users\admin\Desktop\Cours M2\Scala\Scala_Project\src\main\scala\fileReader\Database.scala:3:1: expected class or object definition[0m
-[0m[[0m[31merror[0m] [0m[0mval db = Database.forConfig("h2mem")[0m
-[0m[[0m[31merror[0m] [0m[0m^[0m
-[0m[[0m[31merror[0m] [0m[0mC:\Users\admin\Desktop\Cours M2\Scala\Scala_Project\src\main\scala\fileReader\Database.scala:5:1: expected class or object definition[0m
-[0m[[0m[31merror[0m] [0m[0mh2mem { [0m
-[0m[[0m[31merror[0m] [0m[0m^[0m
-[0m[[0m[31merror[0m] [0m[0mC:\Users\admin\Desktop\Cours M2\Scala\Scala_Project\src\main\scala\fileReader\Database.scala:15:9: identifier expected but 'type' found.[0m
-[0m[[0m[31merror[0m] [0m[0m    def type = column[String]("TYPE")[0m
-[0m[[0m[31merror[0m] [0m[0m        ^[0m
+[0m[[0m[31merror[0m] [0m[0mC:\Users\admin\Desktop\Cours M2\Scala\Scala_Project\src\main\scala\fileReader\Database.scala:16:13: identifier expected but 'type' found.[0m
+[0m[[0m[31merror[0m] [0m[0m        def type = column[String]("TYPE")[0m
+[0m[[0m[31merror[0m] [0m[0m            ^[0m
+[0m[[0m[31merror[0m] [0m[0mC:\Users\admin\Desktop\Cours M2\Scala\Scala_Project\src\main\scala\fileReader\model\Airport.scala:5:57: identifier expected but 'type' found.[0m
+[0m[[0m[31merror[0m] [0m[0msealed final case class Airport(id: Int, ident: String, type: String, name: String, latitude_deg: Float, longitude_deg: Float, elevation_ft: Int, continent: String, iso_country: String, iso_region: String, municipality: String, scheduled_service: String, gps_code: Option[String], iata_code: String, local_code: Option[String], home_link: Option[String], wikipedia_link: Option[String] ) extends Airport[0m
+[0m[[0m[31merror[0m] [0m[0m                                                        ^[0m
+[0m[[0m[31merror[0m] [0m[0mC:\Users\admin\Desktop\Cours M2\Scala\Scala_Project\src\main\scala\fileReader\model\Airport.scala:24:2: ':' expected but eof found.[0m
+[0m[[0m[31merror[0m] [0m[0m}[0m
+[0m[[0m[31merror[0m] [0m[0m ^[0m
 [0m[[0m[31merror[0m] [0m[0mthree errors found[0m
