@@ -39,26 +39,30 @@ object Airport {
   }
 }
 
-class NonEmptyString (val underlying: String) extends String{
+class NonEmptyString (val underlying: String) extends AnyVal
+
+object NonEmptyString {
   def foo: NonEmptyString = new NonEmptyString(checkEmpty(underlying))
 
   def checkEmpty(arg: String){
     arg match {
-      case None    => throw new Exception("There is an empty string in a required input.")
+      case None    => None
       case Some(s) => s.trim.isEmpty
     }
   }
   
 }
 
-class Code (val underlying: String) extends String{
+class Code (val underlying: String) extends AnyVal
+
+object Code {
   def foo: Code = new Code(checkCode(underlying))
 
   def checkCode(arg: String){
     val pattern = new Regex("[A-Z][A-Z]")
     arg match{
       case pattern => arg
-      case _       => throw new Exception("A code input is not a code.")
+      case _       => None
     }
   }
 }
