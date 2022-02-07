@@ -2,7 +2,23 @@ package fileReader.model
 
 import scala.util.Try
 
-sealed final case class Airport(id: Int, ident: String, type: String, name: String, latitude_deg: Float, longitude_deg: Float, elevation_ft: Int, continent: String, iso_country: String, iso_region: String, municipality: String, scheduled_service: String, gps_code: Option[String], iata_code: String, local_code: Option[String], home_link: Option[String], wikipedia_link: Option[String] ) extends Airport
+final case class Airport(id: Int, 
+                         ident: NonEmptyString, 
+                         building_type: NonEmptyString, 
+                         name: NonEmptyString, 
+                         latitude_deg: Float, 
+                         longitude_deg: Float, 
+                         elevation_ft: Int, 
+                         continent: Code, 
+                         iso_country: Code, 
+                         iso_region: String, 
+                         municipality: String, 
+                         scheduled_service: String, 
+                         gps_code: Option[String], 
+                         iata_code: String, 
+                         local_code: Option[String], 
+                         home_link: Option[String], 
+                         wikipedia_link: Option[String] ) extends Airport
 
 
 object Airport {
@@ -19,6 +35,30 @@ object Airport {
       case (None, None, Some(_), Some(_)) | (None, Some(_), None, Some(_)) | (None, Some(_), Some(_), None)| (Some(_), None, Some(_), None) | (Some(_), None, None, Some(_)) | (Some(_), Some(_), None, None) => None // 2 errors
       case (Some(_), None, None, None) | (None, Some(_), None, None) | (None, None, Some(_), None) | (None, None, None, Some(_)) => None // 3 error
       case (None, None, None, None) => None // 4 errors
+    }
+  }
+}
+
+class NonEmptyString (val underlying: String) extends String{
+  def foo: NonEmptyString = new NonEmptyString(checkEmpty(underlying))
+
+  def checkEmpty(arg: String){
+    arg match {
+      case None    => throw new Exception("There is an empty string in a required input.")
+      case Some(s) => s.trim.isEmpty
+    }
+  }
+  
+}
+
+class Code (val underlying: String) extends String{
+  def foo: Code = new Code(checkCode(underlying))
+
+  def checkCode(arg: String){
+    val pattern = new Regex("[A-Z][A-Z]")
+    arg match{
+      case pattern => arg
+      case _       => throw new Exception("A code input is not a code.")
     }
   }
 }
