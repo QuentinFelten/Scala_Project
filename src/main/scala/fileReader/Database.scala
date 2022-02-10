@@ -71,4 +71,16 @@ sealed final class Database(){
                  le_elevation_ft, le_heading_degT, le_displaced_threshold_ft, he_ident, he_latitude_deg, he_longitude_deg, he_elevation_ft, 
                  he_heading_degT, he_displaced_threshold_ft)
     }
+    val runways = TableQuery[RunwaysTable]
+
+    val setup = DBIO.seq(
+        (airports.schema ++ countries.schema ++ runways.schema).create
+    )
+
+    // we execute the setup Action asynchronously with db.run
+    val setupFuture = db.run(setup)
+
+    val query = for{
+        (a,)
+    }
 }
