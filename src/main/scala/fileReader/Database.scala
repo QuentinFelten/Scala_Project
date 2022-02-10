@@ -81,6 +81,6 @@ sealed final class Database(){
     val setupFuture = db.run(setup)
 
     val query = for{
-        (a,)
+        (a,c) <- 
     }
 }

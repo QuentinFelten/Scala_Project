@@ -1,4 +1,10 @@
-[0m[[0m[31merror[0m] [0m[0mC:\Users\Neohl\Desktop\Cours_M2\Scala\Scala_Project\src\main\scala\fileReader\model\Airport.scala:34:7: ')' expected but 'case' found.[0m
+[0m[[0m[31merror[0m] [0m[0mC:\Users\admin\Desktop\Cours M2\Scala\Scala_Project\src\main\scala\fileReader\Database.scala:85:5: illegal start of simple expression[0m
+[0m[[0m[31merror[0m] [0m[0m    }[0m
+[0m[[0m[31merror[0m] [0m[0m    ^[0m
+[0m[[0m[31merror[0m] [0m[0mC:\Users\admin\Desktop\Cours M2\Scala\Scala_Project\src\main\scala\fileReader\Database.scala:86:1: illegal start of simple expression[0m
+[0m[[0m[31merror[0m] [0m[0m}[0m
+[0m[[0m[31merror[0m] [0m[0m^[0m
+[0m[[0m[31merror[0m] [0m[0mC:\Users\admin\Desktop\Cours M2\Scala\Scala_Project\src\main\scala\fileReader\model\Airport.scala:34:7: ')' expected but 'case' found.[0m
 [0m[[0m[31merror[0m] [0m[0m      case (None, Some(_), Some(_), Some(_)) | (Some(_), None, Some(_), Some(_)) | (Some(_), Some(_), None, Some(_)) | (Some(_), Some(_), Some(_), None) => None // 1 error[0m
 [0m[[0m[31merror[0m] [0m[0m      ^[0m
-[0m[[0m[31merror[0m] [0m[0mone error found[0m
+[0m[[0m[31merror[0m] [0m[0mthree errors found[0m
