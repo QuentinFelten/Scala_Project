@@ -7,10 +7,10 @@ object Main {
     val airports = CSV.read("airports.csv", Airport.fromAirports_CSVline)
     val countries = CSV.read("countries.csv", Country.fromCountries_CSVline)
     val runways = CSV.read("runways.csv", Runway.fromRunways_CSVline)
-    menu()
+    menu(countries.lines.toList, airports.lines.toList, runways.lines.toList)
   }
 
-  def menu():Unit ={
+  def menu(countries: List[Country], airports: List[Airport], runways: List[Runway] ):Unit ={
     println("Please select an option:")
     println("(1) Query: look for airports & runways in a country.")
     println("(2) Reports: looks for specific things.")
@@ -19,16 +19,16 @@ object Main {
     Try(scala.io.Stdin.readInt()) match{
       case Success(x) => x match {
         case 1 =>
-          queryMenu()
-          menu()
+          queryMenu(countries, airports, runways)
+          menu(countries, airports, runways)
         
         case 2 =>
           reportsMenu()
-          menu()
+          menu(countries, airports, runways)
 
         case 3 => println("Exiting.")
 
-        case _ => menu()
+        case _ => menu(countries, airports, runways)
       }
 
       case Failure(i) =>
@@ -37,13 +37,13 @@ object Main {
     }
   }
 
-  def queryMenu(): Unit ={
+  def queryMenu(countries: List[Country], airports: List[Airport], runways: List[Runway] ): Unit ={
     println("Please type the country name or code that you wish to check.")
     
     Try(scala.io.Stdin.readLine()) match{
       case Success(x) => x match{
         println("These are the airports & runways you are looking for:")
-        checkAirports(x)
+        checkAirports(x, countires, airports, runways)
         println()
         menu()
 
