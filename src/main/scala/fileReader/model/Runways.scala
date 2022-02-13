@@ -1,4 +1,5 @@
 import CustomTypes._
+import scala.util.Try
 
 final case class Runway(id: Int,
                         airport_ref: Int,
@@ -27,6 +28,26 @@ object Runway{
     }
 
     def parseOneRunway(line: Array[String]): Option[Runway] = {
-
+        Try(Some(Runway(line(0).toInt,
+                        line(1).toInt,
+                        line(2),
+                        line(3).toInt,
+                        line(4).toInt,
+                        line(5),
+                        line(6).toInt,
+                        line(7).toInt,
+                        line(8),
+                        Try(Some(line(5).toFloat)) getOrElse None,
+                        Try(Some(line(6).toFloat)) getOrElse None,
+                        Try(Some(line(7).toInt)) getOrElse None,
+                        Try(Some(line(8).toFloat)) getOrElse None,
+                        Try(Some(line(9).toInt)) getOrElse None,
+                        Try(Some(line(10))) getOrElse None,
+                        Try(Some(line(11).toFloat)) getOrElse None,
+                        Try(Some(line(12).toFloat)) getOrElse None,
+                        Try(Some(line(13).toInt)) getOrElse None,
+                        Try(Some(line(14).toFloat)) getOrElse None,
+                        Try(Some(line(15).toInt)) getOrElse None
+        ))) getOrElse None
     }
 }
