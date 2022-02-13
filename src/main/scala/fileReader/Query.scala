@@ -23,6 +23,32 @@ object Query {
 
     }
 
+    def topCountries(countries: List[Country], mondialAirports: List[Airport]): Unit = {
+        
+        /*val map = countries.toMap.foreach (_.name -> mondialAirports.filter(target => target.iso_country == countries.code))
+                    .mapValues(_.size)*/
+                    
+        val map = countries.map(target => target.name -> mondialAirports.filter(airportTarget => airportTarget.iso_country == target.code) )
+                    .toMap
+                    .view
+                    .mapValues(_.size)
+                    .toMap
+                    .toSeq
+
+
+        println ("\nTop:")
+        map.sortWith((a,b) => a._2 > b._2)
+            .take(10)
+            .foreach (println)
+
+
+        println ("\nFlop:")
+        map.sortWith((a,b) => a._2 < b._2)
+            .take(10)
+            .foreach (println)
+        println ()
+    }
+
     def printCountry (dis: Option[Country]): Unit = {
         val tmp : String = Try ("country : " + dis.get.name) getOrElse "There is no country with this name"
         println(tmp)
@@ -39,6 +65,7 @@ object Query {
         println("|| runway id:" + dis.id)
     }
 
+    
     def topRunwayLatitudes (): Unit = {
         ???
     }
@@ -47,9 +74,7 @@ object Query {
         ???
     }
 
-    def topCountries(): Unit = {
-        ???
-    }
+    
 
 
 

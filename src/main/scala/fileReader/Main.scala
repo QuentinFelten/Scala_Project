@@ -65,7 +65,7 @@ object Main {
     Try(scala.io.StdIn.readInt()) match{
       case Success(x) => x match{
         case 1 => 
-          topCountries()
+          topCountries(countries, airports)
           menu(countries, airports, runways)
         
         case 2 =>
