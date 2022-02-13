@@ -73,7 +73,7 @@ object Main {
           Try(scala.io.StdIn.readLine()) match{
             case Success(x) => 
               println("These are the types of runways present in the country:")
-              runwayTypesCountry()
+              runwayTypesCountry(x, countries, airports, runways)
               println()
               menu(countries, airports, runways)
 
