@@ -1,6 +1,6 @@
-import CustomTypes._
+import scala.util.Try 
 
-final case class Airport(id: Int, 
+case class Airport(id: Int, 
                          ident: String, 
                          building_type: String, 
                          name: String, 
@@ -16,16 +16,12 @@ final case class Airport(id: Int,
                          iata_code: String, 
                          local_code: Option[String], 
                          home_link: Option[String], 
-                         wikipedia_link: Option[String] ) extends Airport
+                         wikipedia_link: Option[String] ) 
 
 
 object Airport {
-  def fromAirports_CSVline(line: Array[String]): Option[Country] = {
-        parseOneAirport(line)
-    }
-
-  def parseOneAirport(line: Array[String]): Option[Country] = {
-    Try(Some(Airport(line(0).toInt,
+  def fromAirports_CSVline(line: Array[String]): Option[Airport] = {
+        Try(Some(Airport(line(0).toInt,
                      line(1),
                      line(2),
                      line(3),
@@ -41,7 +37,8 @@ object Airport {
                      line(13),
                      Try(Some(line(14))) getOrElse None,
                      Try(Some(line(15))) getOrElse None,
-                     Try(Some(line(16))) getOrElse None,
+                     Try(Some(line(16))) getOrElse None
     ))) getOrElse None
-  }
+    }
+
 }

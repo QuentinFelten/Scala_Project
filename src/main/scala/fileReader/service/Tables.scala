@@ -1,4 +1,4 @@
-import scala.slick.driver.MySQLDriver.simple._
+/*import scala.slick.driver.MySQLDriver.simple._
 
 object Tables{
     class AirportTable(tag: Tag) extends Table[Airport](tag, "AIRPORTS"){
@@ -62,4 +62,4 @@ object Tables{
                  he_heading_degT, he_displaced_threshold_ft)
     }
     val runways = TableQuery[RunwaysTable]
-}
+}*/

@@ -1,6 +1,6 @@
-import CustomTypes._
+import scala.util.Try 
 
-final case class Country(id: Int,
+case class Country(id: Int,
                    code: String,
                    name: String,
                    continent: String,
@@ -9,10 +9,6 @@ final case class Country(id: Int,
 
 object Country{
     def fromCountries_CSVline(line: Array[String]): Option[Country] = {
-        parseOneCountry(line)
-    }
-
-    def parseOneCountry(line: Array[String]): Option[Country] = {
         Try(Some(Country(line(0).toInt,
         line(1),
         line(2),
@@ -21,4 +17,5 @@ object Country{
         Try(Some(line(5))) getOrElse None
       ))) getOrElse None
     }
+
 }

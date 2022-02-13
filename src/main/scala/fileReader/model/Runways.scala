@@ -1,7 +1,6 @@
-import CustomTypes._
 import scala.util.Try
 
-final case class Runway(id: Int,
+case class Runway(id: Int,
                         airport_ref: Int,
                         airport_ident: String,
                         length_ft: Int,
@@ -24,10 +23,6 @@ final case class Runway(id: Int,
 
 object Runway{
     def fromRunways_CSVline(line: Array[String]): Option[Runway] = {
-        parseOneCountry(line)
-    }
-
-    def parseOneRunway(line: Array[String]): Option[Runway] = {
         Try(Some(Runway(line(0).toInt,
                         line(1).toInt,
                         line(2),
@@ -50,4 +45,5 @@ object Runway{
                         Try(Some(line(15).toInt)) getOrElse None
         ))) getOrElse None
     }
+
 }
