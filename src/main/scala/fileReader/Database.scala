@@ -1,6 +1,6 @@
 import scala.slick.driver.MySQLDriver.simple._
 import scala.slick.jdbc.meta._
-
+/*
 sealed class Database(){
 
     val db = Database.forURL(
@@ -57,3 +57,4 @@ sealed class Database(){
 
     
 }
+*/
