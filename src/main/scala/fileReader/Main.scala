@@ -8,6 +8,9 @@ object Main {
     val airports = CSV.read("airports.csv", Airport.fromAirports_CSVline)
     val countries = CSV.read("countries.csv", Country.fromCountries_CSVline)
     val runways = CSV.read("runways.csv", Runway.fromRunways_CSVline)
+    println(airports.nbInvalidLine)
+    println(countries.nbInvalidLine)
+    println(runways.nbInvalidLine)
     menu(countries.lines.toList, airports.lines.toList, runways.lines.toList)
   }
 

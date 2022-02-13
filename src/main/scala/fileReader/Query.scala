@@ -65,7 +65,7 @@ object Query {
         // fonction qui récupère un nom de pays, et qui va afficher les types de runways de ce pays
 
         val ourCountry: Option[Country] = Try(countries.find(target => target.name.toUpperCase() == "\""+name.toUpperCase()+"\"" || target.code == "\""+name.toUpperCase()+"\"")) getOrElse None
-        // inputCountry va contenir le pays demandé par l'utilisateur
+        // ourCountry va contenir le pays demandé par l'utilisateur
         printCountry (ourCountry)
 
         val codeCountry: String = Try (ourCountry.get.code) getOrElse ""
@@ -75,25 +75,27 @@ object Query {
         // nationalAirports sera la liste de tous les aeroports liés au pays. 
         // si on n'a pas de pays, la liste devrait être vide
 
-        nationalAirports.foreach {curr => printAirportOnlyRunwayTypes (curr, mondialRunways) }
-        // Call printairport pour chaque aéroport repéré
-        // Si la liste est vide, printairport ne sera jamais appelé
+        println("Runway types:")
+        mondialRunways.filter(rw => nationalAirports.exists(target => target.ident == rw.airport_ident))
+              .groupBy(_.surface)
+              .keys
+              .foreach(println)
     }
 
     def printCountry (dis: Option[Country]): Unit = {
-        val tmp : String = Try ("country : " + dis.get.name) getOrElse "There is no country with this name"
+        val tmp : String = Try ("Country : " + dis.get.name) getOrElse "There is no country with this name"
         println(tmp)
     }
 
     def printAirport (dis: Airport, mondialRunways: List[Runway]): Unit = {
-        println("| airport : " + dis.name)
+        println("| Airport : " + dis.name)
 
         val localRunway: List[Runway] = mondialRunways.filter(target => target.airport_ref == dis.id)
         localRunway.foreach {printRunway }
     }
     
     def printRunway (dis: Runway): Unit = {
-        println("|| runway id:" + dis.id)
+        println("|| Runway id:" + dis.id)
     }
 
     def printAirportOnlyRunwayTypes (dis: Airport, mondialRunways: List[Runway]): Unit = {
