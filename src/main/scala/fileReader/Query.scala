@@ -12,11 +12,12 @@ val nationalAirports: List[Airport] = airports.filter(target => target.iso_count
 }
 
 def printCountry (dis: Country): Unit = {
-    ???
+    println("pays: " + dis.name + " (" + dis.code + ")")
 }
 
 def printAirport (dis: Airport): Unit = {
-    ???
+    println("|" + dis.name)
+    
 }
 
 def printRunway (dis: Runway): Unit = {

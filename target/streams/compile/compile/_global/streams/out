@@ -25,7 +25,7 @@
 [0m[[0m[31merror[0m] [0m[0mC:\Users\Administrateur\Documents\GitHub\Scala_Project\src\main\scala\fileReader\Query.scala:18:1: expected class or object definition[0m
 [0m[[0m[31merror[0m] [0m[0mdef printAirport (dis: Airport): Unit = {[0m
 [0m[[0m[31merror[0m] [0m[0m^[0m
-[0m[[0m[31merror[0m] [0m[0mC:\Users\Administrateur\Documents\GitHub\Scala_Project\src\main\scala\fileReader\Query.scala:22:1: expected class or object definition[0m
+[0m[[0m[31merror[0m] [0m[0mC:\Users\Administrateur\Documents\GitHub\Scala_Project\src\main\scala\fileReader\Query.scala:23:1: expected class or object definition[0m
 [0m[[0m[31merror[0m] [0m[0mdef printRunway (dis: Runway): Unit = {[0m
 [0m[[0m[31merror[0m] [0m[0m^[0m
 [0m[[0m[31merror[0m] [0m[0m10 errors found[0m
