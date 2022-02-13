@@ -31,18 +31,19 @@ object Query {
                     .mapValues(_.size)
                     .toMap
                     .toSeq
-
+        // créé une map avec les noms des pays auxquels on associe le nombre d'airport
 
         println ("\nTop:")
         map.sortWith((a,b) => a._2 > b._2)
             .take(10)
             .foreach (println)
-
+        // classe les dix meilleurs
 
         println ("\nFlop:")
         map.sortWith((a,b) => a._2 < b._2)
             .take(10)
             .foreach (println)
+        // classe les dix moins bons
         println ()
     }
 
