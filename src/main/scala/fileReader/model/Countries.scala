@@ -1,11 +1,11 @@
 import CustomTypes._
 
 final case class Country(id: Int,
-                   code: Code,
-                   name: NonEmptyString,
-                   continent: StriNonEmptyStringng,
-                   wikipedia_link: NonEmptyString,
-                   keywords: Option[NonEmptyString])
+                   code: String,
+                   name: String,
+                   continent: String,
+                   wikipedia_link: String,
+                   keywords: Option[String])
 
 object Country{
     def fromCountries_CSVline(line: Array[String]): Option[Country] = {
