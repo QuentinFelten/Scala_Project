@@ -1,5 +1,4 @@
-import scala.util.{Failure, Success}
-import scala.util.Try
+import scala.util.{Try, Failure, Success}
 
 object Main {
 
@@ -41,7 +40,7 @@ object Main {
     println("Please type the country name or code that you wish to check.")
     
     Try(scala.io.Stdin.readLine()) match{
-      case Success(x) => x match{
+      case Success(x) => 
         println("These are the airports & runways you are looking for:")
         checkAirports(x, countires, airports, runways)
         println()
