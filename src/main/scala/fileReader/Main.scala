@@ -84,7 +84,7 @@ object Main {
 
         case 3 => 
           println("This is the top 10 of the most common runway latitudes:")
-          runwayTypesCountry()
+          topRunwayLatitudes(runways)
           println()
           menu(countries, airports, runways)
       }

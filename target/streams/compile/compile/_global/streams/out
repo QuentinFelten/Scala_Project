@@ -1,7 +1,4 @@
-[0m[[0m[31merror[0m] [0m[0mC:\Users\Administrateur\Documents\GitHub\Scala_Project\src\main\scala\fileReader\Query.scala:38:13: value sortWith is not a member of scala.collection.immutable.Map[String,Int][0m
-[0m[[0m[31merror[0m] [0m[0m        map.sortWith((a,b) => a._2 > b._2)[0m
-[0m[[0m[31merror[0m] [0m[0m            ^[0m
-[0m[[0m[31merror[0m] [0m[0mC:\Users\Administrateur\Documents\GitHub\Scala_Project\src\main\scala\fileReader\Query.scala:43:13: value sortWith is not a member of scala.collection.immutable.Map[String,Int][0m
-[0m[[0m[31merror[0m] [0m[0m        map.sortWith((a,b) => a._2 < b._2)[0m
-[0m[[0m[31merror[0m] [0m[0m            ^[0m
-[0m[[0m[31merror[0m] [0m[0mtwo errors found[0m
+[0m[[0m[31merror[0m] [0m[0mC:\Users\Administrateur\Documents\GitHub\Scala_Project\src\main\scala\fileReader\Query.scala:54:26: value le_ident is not a member of List[Runway][0m
+[0m[[0m[31merror[0m] [0m[0m            .mapValues(_.le_ident)[0m
+[0m[[0m[31merror[0m] [0m[0m                         ^[0m
+[0m[[0m[31merror[0m] [0m[0mone error found[0m
